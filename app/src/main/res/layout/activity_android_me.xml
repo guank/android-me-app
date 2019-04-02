@@ -24,9 +24,23 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:scaleType="centerInside">
-
         </FrameLayout>
 
+        <!-- Container to hold the body BodyPartFragment of the custom Android -->
+        <FrameLayout
+            android:id="@+id/body_container"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerInside">
+        </FrameLayout>
+
+        <!-- Container to hold the leg BodyPartFragment of the custom Android -->
+        <FrameLayout
+            android:id="@+id/leg_container"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerInside">
+        </FrameLayout>
 
     </LinearLayout>
 

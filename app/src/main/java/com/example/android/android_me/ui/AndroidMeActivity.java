@@ -1,5 +1,6 @@
 package com.example.android.android_me.ui;
 
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -12,5 +13,16 @@ public class AndroidMeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_android_me);
+
+        // Set new instance for BodyPartFragment to display via FragmentManager
+        BodyPartFragment headFragment = new BodyPartFragment();
+
+        // Use a FragmentManager and transaction to add fragment to the screen
+        FragmentManager fragmentManager = getSupportFragmentManager();
+
+        // Fragment transaction
+        fragmentManager.beginTransaction()
+                .add(R.id.head_container, headFragment)
+                .commit();
     }
 }

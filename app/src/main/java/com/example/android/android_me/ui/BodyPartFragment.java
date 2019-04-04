@@ -77,11 +77,11 @@ public class BodyPartFragment extends Fragment {
 
     // Setters for tracking list images that this fragment can display and which image in list
     // is currently displayed
-    public void setmImageIds(List<Integer> imageIds){
+    public void setImageIds(List<Integer> imageIds){
         mImageIds = imageIds;
     }
 
-    public void setmListIndex(int index){
+    public void setListIndex(int index){
         mListIndex = index;
     }
 

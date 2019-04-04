@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
 
                 // Creating a new head fragment
                 BodyPartFragment headFragment = new BodyPartFragment();
-                headFragment.setmImageIds(AndroidImageAssets.getHeads());
+                headFragment.setImageIds(AndroidImageAssets.getHeads());
                 // Add the fragment to its container using a transaction
                 fragmentManager.beginTransaction()
                         .add(R.id.head_container, headFragment)
@@ -57,14 +57,14 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
 
                 // New body fragment
                 BodyPartFragment bodyFragment = new BodyPartFragment();
-                bodyFragment.setmImageIds(AndroidImageAssets.getBodies());
+                bodyFragment.setImageIds(AndroidImageAssets.getBodies());
                 fragmentManager.beginTransaction()
                         .add(R.id.body_container, bodyFragment)
                         .commit();
 
                 // New leg fragment
                 BodyPartFragment legFragment = new BodyPartFragment();
-                legFragment.setmImageIds(AndroidImageAssets.getLegs());
+                legFragment.setImageIds(AndroidImageAssets.getLegs());
                 fragmentManager.beginTransaction()
                         .add(R.id.leg_container, legFragment)
                         .commit();
@@ -80,10 +80,10 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
 
         // bodyPartNumber will be = 0 for head fragment, = 1 for body, = 2 for leg
         // Division by 12 gives these values since each list of images resources has a size of 12
-        int bodyPartNumber = position / 12;
+        int bodyPartNumber = position /12;
 
         // Store list index and ensure index is a value between 0-11
-        int listIndex = position - 12 * bodyPartNumber;
+        int listIndex = position - 12*bodyPartNumber;
 
         // Handle the two-pane case and replace existing fragments right when a new image is selected from the master list
         if (mTwoPane) {
@@ -96,23 +96,23 @@ public class MainActivity extends AppCompatActivity implements MasterListFragmen
                 case 0:
                     // A head image has been clicked
                     // Give the correct image resources to the new fragment
-                    newFragment.setmImageIds(AndroidImageAssets.getHeads());
-                    newFragment.setmListIndex(listIndex);
+                    newFragment.setImageIds(AndroidImageAssets.getHeads());
+                    newFragment.setListIndex(listIndex);
                     // Replace the old head fragment with a new one
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.head_container, newFragment)
                             .commit();
                     break;
                 case 1:
-                    newFragment.setmImageIds(AndroidImageAssets.getBodies());
-                    newFragment.setmListIndex(listIndex);
+                    newFragment.setImageIds(AndroidImageAssets.getBodies());
+                    newFragment.setListIndex(listIndex);
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.body_container, newFragment)
                             .commit();
                     break;
                 case 2:
-                    newFragment.setmImageIds(AndroidImageAssets.getLegs());
-                    newFragment.setmListIndex(listIndex);
+                    newFragment.setImageIds(AndroidImageAssets.getLegs());
+                    newFragment.setListIndex(listIndex);
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.leg_container, newFragment)
                             .commit();
